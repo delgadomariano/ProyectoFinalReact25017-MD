@@ -36,6 +36,7 @@ function App() {
 
   const filteredCocktails = cocktail.filter(drink =>
     drink.strDrink.toLowerCase().includes(filterText.toLowerCase())
+    
   );
 
   return (
