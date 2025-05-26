@@ -5,18 +5,21 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const ProductList = ({ category = null }) => 
 { 
+  
+  
   const [cocktail, setCocktail] = useState([])
   const [loading, setLoading] = useState(true) 
 
   const [filterText, setFilterText] = useState('');
   
   useEffect(()=>{
+  
     fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Cocktail')
     .then(response => response.json())
     .then(data => {
       console.log(data);
       setCocktail(data.drinks); 
-      setLoading(false); 
+      setLoading(false);  
     })
     .catch(error => {
       console.error('Error fetching data:',  error)
