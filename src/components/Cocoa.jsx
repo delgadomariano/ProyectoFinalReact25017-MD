@@ -1,13 +1,13 @@
 import React from 'react';
 import ProductList from './ProductList';
 
-const Infaltables = () => {
+const Cocoa = () => {
   return (
     <div className="container">
-      <h1>Infaltables</h1>
-      <ProductList category="Coffee / Tea" />
+      <h1>Cocoa</h1>
+      <ProductList category="Cocoa" />
     </div>
   );
 };
 
-export default Infaltables;
+export default Cocoa;
