@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useContext } from 'react';
 import ProductCard from './ProductCard';
 import { Container, Row, Col, Card, Button, Modal, Form } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { CartContext } from './CartContext';  
+
 
 const ProductList = ({ category = null }) => {
-
 
   const [cocktail, setCocktail] = useState([])
   const [loading, setLoading] = useState(true)
   const [filterText, setFilterText] = useState('');
+  const { agregarAlCarrito } = useContext(CartContext);
 
   useEffect(() => {
     fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`)
@@ -32,9 +34,7 @@ const ProductList = ({ category = null }) => {
 
   );
 
-  const handleAgregarAlCarrito = (drink) => {
-    alert(`Producto ${drink.strDrink} agregado al carrito`);
-  };
+ 
 
   return (
 
@@ -55,7 +55,7 @@ const ProductList = ({ category = null }) => {
           <Row>
             {filteredCocktails.map(drink => (
               <Col key={drink.idDrink} md={4}>
-                <ProductCard drink={drink} agregarAlCarrito={handleAgregarAlCarrito} />
+                <ProductCard drink={drink} agregarAlCarrito={agregarAlCarrito} />
               </Col>
             ))}
           </Row>
