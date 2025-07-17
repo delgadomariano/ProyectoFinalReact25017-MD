@@ -56,6 +56,9 @@ export default function Login() {
             <Button variant="primary" type="submit" className="w-100">
               Ingresar
             </Button>
+            <br />  <br />   
+            <p className="text-center ">Perfil de admin(Carrito/Dashboard): admin/1234</p>
+            <p className="text-center ">Perfil de cliente(Solo carrito): cliente/1234</p> 
           </Form>
         </Card.Body>
       </Card>

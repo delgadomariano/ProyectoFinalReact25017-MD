@@ -66,7 +66,7 @@ const Header = () => {
                   <strong>{user}</strong>
                 </Navbar.Text>
                 <Button variant="outline-light" onClick={handleLogout}>
-                Cerrar
+                Salir
               </Button>
                 </>
             ) : (
@@ -89,7 +89,7 @@ const Header = () => {
                   Usuario: <strong>{user}</strong>
                 </Navbar.Text>
                 <Button variant="outline-light" onClick={handleLogout}>
-                  Cerrar
+                  Salir
                 </Button>
               </>
             ):(

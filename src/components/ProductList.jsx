@@ -13,11 +13,11 @@ const ProductList = ({ category = null }) => {
   const { agregarAlCarrito } = useContext(CartContext);
 
   useEffect(() => {
-    fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${category}`)
+    fetch(`https://6878255531d28a460e1d4ec9.mockapi.io/api/v1/products?category=${category}`)
       .then(response => response.json())
       .then(data => {
         console.log(data);
-        setCocktail(data.drinks);
+        setCocktail(data);
         setLoading(false);
       })
       .catch(error => {
@@ -30,7 +30,7 @@ const ProductList = ({ category = null }) => {
 
 
   const filteredCocktails = cocktail.filter(drink =>
-    drink.strDrink.toLowerCase().includes(filterText.toLowerCase())
+    drink.title.toLowerCase().includes(filterText.toLowerCase())
 
   );
 
@@ -54,7 +54,7 @@ const ProductList = ({ category = null }) => {
         <p>Cargando...</p> : (
           <Row>
             {filteredCocktails.map(drink => (
-              <Col key={drink.idDrink} md={4}>
+              <Col key={drink.id} md={4}>
                 <ProductCard drink={drink} agregarAlCarrito={agregarAlCarrito} />
               </Col>
             ))}

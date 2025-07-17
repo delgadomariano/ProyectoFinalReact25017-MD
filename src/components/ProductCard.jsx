@@ -23,10 +23,12 @@ const ProductCard = ({ drink, agregarAlCarrito }) => {
   return (
     <Container className='mt-4'>
       <Card className="m-2">
-        <Card.Img src={drink.strDrinkThumb} />
+        <Card.Img src={drink.image} />
         <Card.Body>
-          <Card.Title>{drink.strDrink}</Card.Title>
-          <Button variant="primary" onClick={() => fetchDrinkDetails(drink.idDrink)}>
+          <Card.Title>{drink.id}</Card.Title>
+          <Card.Title>{drink.title}</Card.Title>
+           <Card.Subtitle>{drink.description}</Card.Subtitle>
+          <Button variant="primary" onClick={() => fetchDrinkDetails(drink.idExterno)}>
             <FontAwesomeIcon icon={faCocktail} size="lg" className="me-2" />
           </Button>
           <Button variant="primary" onClick={() => agregarAlCarrito(drink)}>
