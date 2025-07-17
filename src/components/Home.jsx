@@ -29,8 +29,8 @@ const Home = () => {
 
   return (
     <Container className="mt-5">
-      <h1 className="text-center mb-4">Bienvenido a la Bebida App</h1>
-      <p className="text-center mb-5">Elegí una categoría para explorar bebidas increíbles</p>
+      <h1 className="text-center mb-4">Bienvenido</h1>
+      <p className="text-center mb-5">Selecciona una categoría para elegir tus bebidas</p>
       <Row>
         {categories.map((cat, index) => (
           <Col md={4} key={index}>
